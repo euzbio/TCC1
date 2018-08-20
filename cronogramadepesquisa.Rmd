@@ -1,0 +1,28 @@
+---
+title: "Cronograma da pesquisa"
+author: "Marcos Antonio Euzebio de Oliveira"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  pdf_document: default
+  html_notebook: default
+institute: ENCE
+---
+A principio pretendo: passar os dois primeiros meses envolto quanto ao tratamento do banco de dados;quanto a metodologia foca-la nos 3 primeiros meses; a revisão bibliográfica ocorrerá durante todo o periodo;o ajuste do modelo e a descrição do banco de dados no 2º de 3º mês;análise dos resultados , conclusão, resumo e introdução  nos dois ultimos meses; resumo e introdução 
+```{r echo=FALSE}
+Atividades <- c("Resumo","Introdução", "Revisão Bibliográfica","Tratamento do banco de dados","Ajuste do modelo", "Descrição da base de dados","Metodologia","Análise dos resultados","Conclusão")
+Agosto<-rep(NA,length(Atividades))
+Setembro <- rep(NA,length(Atividades))
+Outubro <- rep(NA,length(Atividades))
+Novembro <- rep(NA,length(Atividades))
+Dezembro <- rep(NA,length(Atividades))
+Agosto[which(Atividades %in% c("Revisão Bibliográfica","Tratamento do banco de dados","Metodologia"))]= "X"
+Setembro[which(Atividades %in% c("Revisão Bibliográfica","Tratamento do banco de dados","Ajuste do modelo","Descrição da base de dados","Metodologia"))]= "X"
+Outubro[which(Atividades %in% c("Revisão Bibliográfica","Ajuste do modelo","Descrição da base de dados","Metodologia"))]= "X"
+Novembro[which(Atividades %in% c("Introdução","Resumo","Revisão Bibliográfica","Análise dos resultados","Conclusão"))]= "X"
+Dezembro[which(Atividades %in% c("Resumo","Análise dos resultados","Conclusão"))]= "X"
+x<- data.frame(Atividades, Agosto, Setembro, Outubro, Novembro, Dezembro )
+knitr::kable(x)
+```
+
+
+
